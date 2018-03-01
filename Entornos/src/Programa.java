@@ -12,20 +12,28 @@ import java.util.Scanner;
  */
 public class Programa {
     
-    public static void main(String args){
+    public static void main(String[] args){
         System.out.println("VAMOS A JUGAR");
         Scanner scan= new Scanner(System.in);
-        boolean jugar = false;
+        boolean jugar = true;
+        int adivinar=0;
+        
         while(jugar)
-            int adivinar=1+(int)(100.0*Math.random());
-            System.out.print("Dime un numero del 1 al 10");
-            int num=scan.nextFloat();
-            if(num!=adivinar)
+        {
+            adivinar=1+(int)(10*Math.random());
+            System.out.print("Dime un numero del 1 al 10:");
+            //System.out.print(adivinar);
+            int num=scan.nextInt();
+            if(num==adivinar)
                 System.out.println("¡Acertaste!:D");
-            if(num<=0)
-                System.out.println(Adios...);
             else
-            System.out.println("¡No! era el "+ adivinar);
+                System.out.println("¡No! era el "+ adivinar);
+            if(num<=0)
+            {
+                System.out.println("Adios...");
+                jugar=false;
+            }
+        }   
         
     }
     
